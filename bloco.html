@@ -1,0 +1,33 @@
+<html>
+   <had>
+       <h1>BLOCO DE ANOTAÇÕES </h1>
+       <style>
+            h1 { background-color:#9F81F7 } 
+            body { background-color:rgb(219, 188, 219) } 
+            button { background-color: rgb(183, 0, 255); }   
+            p { color: rgb(14, 15, 15); }  
+            input { background-color: #F8E0E0 } 
+        </style>
+        <script>
+           function adicionarNaTela(){
+              var paragrafo = document.createElement("p");               //criar um parágrafo
+              var meuPainel = document.getElementById("painel");         //chamar Painel
+              var elementoDoPainel= meuPainel.value;                     //Memorizar o texto
+              var texto = document.createTextNode(elementoDoPainel);     //coverter em node
+              paragrafo.appendChild(texto);                              //add o texto no parágrafo
+              document.body.appendChild(paragrafo);                      //add na tela
+              zerarPainel();
+            }
+            function zerarPainel(){
+               var meuPainel = document.getElementById("painel");
+                meuPainel.value=null;
+            }
+        </script>
+    </had>
+    <body>  
+        <p >Crie uma nota...</p>                                                                      
+        <input id="painel"/>
+        <button onclick="adicionarNaTela()">Salvar</button>  
+        <h3> anotações:</h3>
+    </body>
+</html>
